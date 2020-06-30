@@ -10,63 +10,145 @@
     background-color: white;
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: center;
     border-bottom: 1px solid rgba(0, 0, 0, 0.678);
 
     img {
       width: auto;
-      height: 37px;margin: 0 0 0 20px;
-    }
-
-    .new-user-area {
-      width: 200px;
-      display: inline-flex;
-      justify-content: space-evenly;
-      font-size: 100%;
-
-      a {
-        text-decoration: none;
-        color: rgb(0, 170, 255);
-        display: block;
-        width: 100px;
-        height: 100%;
-
-      }
+      height: 37px;
     }
   }
 
   .open-menu {
-    height: 400px;
-    width: 0px;
+    height: 0px;
+    width: 25%;
     background-color: white;
-    float: left;
+    float: right;
     position: relative;
-    margin: 10px 0 0 0;
-    border-top: 2px solid rgb(0, 170, 255);
-    border-bottom: 2px solid rgb(0, 170, 255);
     border-radius: 0 0 3px 0;
+
+    .menu-contents {
+      width: 100%;
+      height: 100%;
+      visibility: hidden;
+      opacity: 0;
+      position: relative;
+      background-color: rgb(250, 250, 250);
+
+      .user-name {
+        height: 60px;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .top-btns {
+        display: flex;
+        width: 100%;
+
+        a {
+          height: 40px;
+          width: 50%;
+          text-align: center;
+          line-height: 40px;
+          border-top: 1px solid rgb(237, 237, 237);
+          font-size: 70%;
+          text-decoration: none;
+          color: #333333;
+
+          .follow-count {
+            border-right: 1px solid rgb(237, 237, 237);
+          }
+        }
+
+        a:hover {
+          color: rgb(149, 149, 149);
+        }
+      }
+  
+      .center-btns {
+        width: 100%;
+  
+        a {
+          text-decoration: none;
+        }
+  
+        a:hover {
+          background-color: rgb(0, 170, 255);
+          color: white;
+        }
+    
+        .user-btn {
+          display: block;
+          height: 50px;
+          width: 100%;
+          line-height: 50px;
+          border-top: 1px solid rgb(237, 237, 237);
+          text-align: center;
+          color: rgb(0, 170, 255);
+        }
+
+        .ToPost-btn {
+          display: block;
+          height: 60px;
+          width: 100%;
+          line-height: 60px;
+          border-top: 1px solid rgb(237, 237, 237);
+          text-align: center;
+          color: white;
+          background-color: rgb(0, 170, 255);
+        }
+      }
+
+      .bottom-btns {
+        position: absolute;
+        bottom: 25px;
+        right: 0;
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        a {
+          text-decoration: none;
+          color: #8e8e8e;
+          margin: 0 20px;
+        }
+
+        span {
+          font-size: 1em;
+        }
+        
+        i {
+          font-size: 1em;
+          margin-right: 5px;
+        }
+      }
+    }
 
     .clip-btn {
       position: absolute;
-      right: -29px;
-      top: -2px;
-      height: 60px;
-      width: 27px;
+      right: 10px;
+      bottom: -29px;
+      height: 27px;
+      width: 70px;
       background-color: white;
-      border-radius: 0px 10px 10px 0px;
-      display: flex;
+      border-radius: 0px 0px 10px 10px;
       align-items: center;
       justify-content: center;
-      border-top: 2px solid rgb(0, 170, 255);
+      border-left: 2px solid rgb(0, 170, 255);
       border-right: 2px solid rgb(0, 170, 255);
       border-bottom: 2px solid rgb(0, 170, 255);
+      border-top: 1px solid gray;
+      cursor: pointer;
 
       span {
-        height: 35px;
-        width: 2px;
+        height: 2px;
+        width: 40px;
         background-color: black;
         display: block;
-        margin: 0 2px;
+        margin: 4px auto;
         border-radius: 50px;
       }
     }

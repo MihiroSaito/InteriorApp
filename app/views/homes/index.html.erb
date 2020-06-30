@@ -1,13 +1,25 @@
 <div class="wrapper">
   <div class="header">
     <img src="assets/logo.jpg">
-    <div class="new-user-area">
-      <%= link_to "新規登録", "#", class: "signup-btn" %>
-      <%= link_to "ログイン", "#", class: "login-btn" %>
-    </div>
   </div>
   <div class="open-menu">
-  <div class="clip-btn"><span></span><span></span><span></span></div>
+    <div class="menu-contents">
+      <div class="user-name"><p>インテリ アヤコ様</p></div>
+      <div class="top-btns">
+        <%=link_to "#" do%><p class="follow-count">10 フォロー</p><%end%>
+        <%=link_to "#" do%><p class="follower-count">10 フォロワー</p><%end%>
+      </div>
+      <div class="center-btns">
+        <%=link_to "自分の投稿", "#", class: "user-btn"%>
+        <%=link_to "いいね！した家具", "#", class: "user-btn"%>
+        <%=link_to "お気に入りの家具を投稿", "#", class: "ToPost-btn"%>
+      </div>
+      <div class="bottom-btns">
+        <%=link_to "#" do%><i class="fas fa-cog"></i><span>設定</span><%end%>
+        <%=link_to "#" do%><i class="fas fa-sign-out-alt"></i><span>ログアウト</span><%end%>
+      </div>
+    </div>
+    <div class="clip-btn"><span></span><span></span><span></span></div>
   </div>
   <div class="main">
     <div class="intro">

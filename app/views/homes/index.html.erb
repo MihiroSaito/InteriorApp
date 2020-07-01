@@ -4,20 +4,30 @@
   </div>
   <div class="open-menu">
     <div class="menu-contents">
-      <div class="user-name"><p>インテリ アヤコ様</p></div>
-      <div class="top-btns">
-        <%=link_to "#" do%><p class="follow-count">10 フォロー</p><%end%>
-        <%=link_to "#" do%><p class="follower-count">10 フォロワー</p><%end%>
-      </div>
-      <div class="center-btns">
-        <%=link_to "自分の投稿", "#", class: "user-btn"%>
-        <%=link_to "いいね！した家具", "#", class: "user-btn"%>
-        <%=link_to "お気に入りの家具を投稿", "#", class: "ToPost-btn"%>
-      </div>
-      <div class="bottom-btns">
-        <%=link_to "#" do%><i class="fas fa-cog"></i><span>設定</span><%end%>
-        <%=link_to "#" do%><i class="fas fa-sign-out-alt"></i><span>ログアウト</span><%end%>
-      </div>
+      <% if user_signed_in? %>
+        <div class="user-name"><p>インテリ アヤコ様</p></div>
+        <div class="top-btns">
+          <%=link_to "#" do%><p class="follow-count">10 フォロー</p><%end%>
+          <%=link_to "#" do%><p class="follower-count">10 フォロワー</p><%end%>
+        </div>
+        <div class="center-btns">
+          <%=link_to "自分の投稿", user_path(current_user.id), class: "user-btn"%>
+          <%=link_to "いいね！した家具", favorite_user_path(current_user.id), class: "user-btn"%>
+          <%=link_to "お気に入りの家具を投稿", new_item_path, class: "ToPost-btn"%>
+        </div>
+        <div class="bottom-btns">
+          <%=link_to edit_user_registration_path do%><i class="fas fa-cog"></i><span>設定</span><%end%>
+          <%=link_to destroy_user_session_path, method: :delete do%><i class="fas fa-sign-out-alt"></i><span>ログアウト</span><%end%>
+        </div>
+      <% else %>
+        <div class="mypage-info">
+          <h5>マイページをご利用いただくためにはログインが必要です。</h5>
+        </div>
+        <div class="Not-signed-in">
+          <%=link_to "新規会員登録", new_user_registration_path, class: "signUp-btn"%>
+          <%=link_to "ログイン", new_user_session_path, class: "login-btn"%>
+        </div>
+      <% end %>
     </div>
     <div class="clip-btn"><span></span><span></span><span></span></div>
   </div>

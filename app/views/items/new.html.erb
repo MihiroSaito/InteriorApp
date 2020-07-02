@@ -1,0 +1,44 @@
+<div class="wrapper-new">
+  <div class="main-new">
+    <div class="title-new"><h2>お気に入りの家具を投稿する</h2></div>
+    <div class="form-box">
+      <%= form_with(model: @item, scope: :item, url: items_new_path, local: true) do |f| %>
+        <div class="box-left">
+          <p><i class="far fa-check-circle"></i> = 必須項目</p>
+          <h3><i class="far fa-check-circle"></i>クリックして家具の画像を選択してください</h3>
+          <label>
+            <div class="image-area">
+              <%= f.file_field :image, class:"image-field" %>
+              <i class="far fa-file-image"></i>
+            </div>
+          </label>
+        </div>
+        <div class="box-right">
+          <div class="title-area">
+            <h3><i class="far fa-check-circle"></i>タイトルを入力してください</h3>
+            <%=f.text_field :title, class: "title-field", placeholder: "例) 家族全員で座れるソファー"%>
+          </div>
+          <div class="url-area">
+            <h3>URLを入力してください</h3>
+            <%=f.text_field :url, class: "url-field", placeholder: "表品の販売ページなど"%>
+          </div>
+          <div class="price-area">
+            <h3>価格を入力してください</h3>
+            <label>
+              <span>¥</span><%=f.number_field :price, class: "price-field"%>
+            </label>
+          </div>
+          <div class="category-area">
+            <h3><i class="far fa-check-circle"></i>カテゴリーを入力してください</h3>
+            <%=f.select :category, [ ["ソファ"], ["チェア・椅子"], ["テーブル"], ["デスク・机"], ["ベッド"], ["収納家具"], ["子供家具"], ["セット家具"], 
+            ["照明家具"], ["カーテン・ブラインド"], ["ラグ・マット・カーペッド"], ["時計"], ["キッチン用品・テーブルウェア"], ["ファブリック・クッション"], ["生活雑貨"], ["インテリア雑貨"], ["キッチン・住宅設備"], ["ペット家具・インテリア"]], 
+            prompt: "--"%>
+          </div>
+          <div class="submit-area">
+            <%= f.submit "投稿", class: "submit-btn"%>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>

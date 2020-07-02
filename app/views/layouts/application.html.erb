@@ -11,6 +11,12 @@
   </head>
 
   <body>
+    <p class="notice"><%= notice %></p>
+    <p class="alert"><%= alert %></p>
+    <div class="header"><%=link_to root_path do%><%=image_tag "logo.jpg"%><%end%></div>
     <%= yield %>
+    <div class="footer">
+      <p>© 2020 Interians All rights reserved.</p>
+    </div>
   </body>
 </html>

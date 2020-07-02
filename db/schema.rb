@@ -20,14 +20,6 @@ ActiveRecord::Schema.define(version: 2020_06_28_033420) do
     t.index ["user_id"], name: "index_comments_on_user_id"
   end
 
-  create_table "item_images", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.string "image", null: false
-    t.bigint "item_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["item_id"], name: "index_item_images_on_item_id"
-  end
-
   create_table "item_tags", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.bigint "item_id"
     t.bigint "tag_id"
@@ -38,11 +30,11 @@ ActiveRecord::Schema.define(version: 2020_06_28_033420) do
   end
 
   create_table "items", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.string "name", null: false
-    t.string "price", null: false
-    t.string "url", null: false
-    t.string "category1", null: false
-    t.string "category2", null: false
+    t.string "title", null: false
+    t.string "image", null: false
+    t.string "price"
+    t.string "url"
+    t.string "category", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -80,6 +72,10 @@ ActiveRecord::Schema.define(version: 2020_06_28_033420) do
     t.string "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
+    t.string "confirmation_token"
+    t.datetime "confirmed_at"
+    t.datetime "confirmation_sent_at"
+    t.string "unconfirmed_email"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["email"], name: "index_users_on_email", unique: true
@@ -87,7 +83,6 @@ ActiveRecord::Schema.define(version: 2020_06_28_033420) do
   end
 
   add_foreign_key "comments", "users"
-  add_foreign_key "item_images", "items"
   add_foreign_key "item_tags", "items"
   add_foreign_key "item_tags", "tags"
   add_foreign_key "likes", "items"

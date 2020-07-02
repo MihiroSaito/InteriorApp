@@ -4,21 +4,6 @@
   width: 100%;
   height: 100%;
 
-  .header {
-    height: 60px;
-    width: 100%;
-    background-color: white;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.678);
-
-    img {
-      width: auto;
-      height: 37px;
-    }
-  }
-
   .open-menu {
     height: 0px;
     width: 25%;
@@ -41,6 +26,13 @@
         display: flex;
         align-items: center;
         justify-content: center;
+
+        p {
+          max-width: 300px;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          white-space: nowrap;
+        }
       }
 
       .top-btns {
@@ -125,6 +117,51 @@
           margin-right: 5px;
         }
       }
+
+      .mypage-info {
+        height: 100px;
+        width: 100%;
+
+        h5 {
+          padding: 30px 20px;
+          font-size: 110%;
+          line-height: 25px;
+          color: rgb(95, 111, 127);
+        }
+      }
+
+      .Not-signed-in {
+        height: 200px;
+        width: 100%;
+        display:flex;
+        flex-flow: column;
+        justify-content: space-evenly;
+
+        .signUp-btn {
+          display: block;
+          height: 60px;
+          width: 200px;
+          background-color: rgb(0, 170, 255);
+          color: white;
+          text-align: center;
+          line-height: 60px;
+          text-decoration: none;
+          margin: 0 auto;
+          border: 1px solid rgb(0, 170, 255);
+        }
+
+        .login-btn {
+          display: block;
+          height: 60px;
+          width: 200px;
+          color: rgb(0, 170, 255);
+          border: 1px solid rgb(0, 170, 255);
+          text-align: center;
+          line-height: 60px;
+          text-decoration: none;
+          margin: 0 auto;
+        }
+      }
     }
 
     .clip-btn {
@@ -155,7 +192,7 @@
   }
 
   .main {
-    min-height: calc(100vh - 130px);
+    min-height: 100vh;
     height: auto;
     width: 100%;
     background-color: white;
@@ -178,14 +215,6 @@
 
     .intro::-webkit-scrollbar {
       display:none;
-      }
-  }
-
-  .footer {
-    min-height: 70px;
-    height: 100%;
-    width: 100%;
-    background-color: white;
-    background-color: rgb(44, 44, 44);
+    }
   }
 }

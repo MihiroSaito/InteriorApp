@@ -1,11 +1,8 @@
 <div class="wrapper">
-  <div class="header">
-    <img src="assets/logo.jpg">
-  </div>
   <div class="open-menu">
     <div class="menu-contents">
       <% if user_signed_in? %>
-        <div class="user-name"><p>インテリ アヤコ様</p></div>
+        <div class="user-name"><p><%=current_user.name%>様</p></div>
         <div class="top-btns">
           <%=link_to "#" do%><p class="follow-count">10 フォロー</p><%end%>
           <%=link_to "#" do%><p class="follower-count">10 フォロワー</p><%end%>
@@ -43,7 +40,5 @@
         <li><img src="assets/room07.jpg"></li>
       </ul>
     </div>
-  </div>
-  <div class="footer">
   </div>
 </div>

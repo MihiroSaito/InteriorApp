@@ -1,5 +1,10 @@
 <p>Welcome <%= @email %>!</p>
+<div class="email-message">
+  <p>---------------------------------------</p>
+  <p>Interiansへの会員登録ありがとうございます！！</p>
+  <p>---------------------------------------</p>
+  <p>ご本人様確認のため、下のボタンからアクセスして本登録を完了してください！</p>
+  <p><%= link_to '本登録を完了する', confirmation_url(@resource, confirmation_token: @token) %></p>
 
-<p>You can confirm your account email through the link below:</p>
-
-<p><%= link_to 'Confirm my account', confirmation_url(@resource, confirmation_token: @token) %></p>
+  <p>※もし本メールにお心当たりがない場合は、お手数ですが本メールを破棄していただきますようお願いいたします。</p>
+</div>

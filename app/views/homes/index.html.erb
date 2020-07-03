@@ -40,5 +40,32 @@
         <li><img src="assets/room07.jpg"></li>
       </ul>
     </div>
+    <div class="all-items">
+      <div class="title-homes">
+        <h2>人気投稿<span>Popular</span></h2>
+      </div>
+      <div class="items">
+        <% @items.each do |item| %>
+          <div class="post-item">
+            <div class="item-title">
+              <p><%= item.title%></p>
+            </div>
+            <div class="item-image">
+              <%= image_tag item.image.to_s %>
+            </div>
+            <div class="item-category">
+              <p>category</p><span>></span><%=link_to "#" do%><%= item.category %><% end %>
+            </div>
+            <div class="item-price">
+              <span>price</span><p>¥<%= item.price %></p>
+            </div>
+            <div class="see-more">
+              <p id="see-more-btn">see more<i class="fas fa-sort-down"></i></p>
+            </div>
+            <%# <%= item.url %>
+          </div>
+        <% end %>
+      </div>
+    </div>
   </div>
 </div>

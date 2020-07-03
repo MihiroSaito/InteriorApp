@@ -7,9 +7,13 @@
           <p><i class="far fa-check-circle"></i> = 必須項目</p>
           <h3><i class="far fa-check-circle"></i>クリックして家具の画像を選択してください</h3>
           <label>
-            <div class="image-area">
-              <%= f.file_field :image, class:"image-field" %>
+            <div class="image-area" id="image-area">
+              <img id="img1">
+              <%= f.file_field :image, class:"image-field", id: "image-field"%>
               <i class="far fa-file-image"></i>
+              <% if @item.image.present? %>
+                <%= image_tag @item.image, id: :img_prev %>
+              <% end %>
             </div>
           </label>
         </div>
